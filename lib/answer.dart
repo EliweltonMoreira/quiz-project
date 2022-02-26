@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Resposta extends StatelessWidget {
-  const Resposta(this.texto, this.quandoSelecionado, {Key? key})
-      : super(key: key);
+class Answer extends StatelessWidget {
+  const Answer(this.text, this.onSelected, {Key? key}) : super(key: key);
 
-  final String texto;
-  final void Function() quandoSelecionado;
+  final String text;
+  final void Function() onSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,8 @@ class Resposta extends StatelessWidget {
         //   primary: Colors.blue,
         //   onPrimary: Colors.white,
         // ),
-        child: Text(texto),
-        onPressed: quandoSelecionado,
+        child: Text(text),
+        onPressed: onSelected,
       ),
     );
   }

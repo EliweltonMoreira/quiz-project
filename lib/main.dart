@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
-import './questao.dart';
-import './resposta.dart';
+import 'question.dart';
+import 'answer.dart';
 
-main() => runApp(const PerguntaApp());
+main() => runApp(const QuizApp());
 
-class _PerguntaAppState extends State<PerguntaApp> {
-  var _perguntaSelecionada = 0;
+class _QuizAppState extends State<QuizApp> {
+  var _selectedQuestions = 0;
 
-  void _responder() {
+  void _reply() {
     setState(() {
-      _perguntaSelecionada++;
+      _selectedQuestions++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final perguntas = [
-      'Qual é a sua cor favorita?',
-      'Qual é o seu animal favorito?',
+    final questions = [
+      'What is your favorite color?',
+      'What is your favorite animal?',
     ];
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Perguntas'),
+          title: const Text('Questions'),
         ),
         body: Column(
           children: [
-            Questao(perguntas[_perguntaSelecionada]),
-            Resposta('Resposta 1', _responder),
-            Resposta('Resposta 2', _responder),
-            Resposta('Resposta 3', _responder),
+            Question(questions[_selectedQuestions]),
+            Answer('Question 1', _reply),
+            Answer('Question 2', _reply),
+            Answer('Question 3', _reply),
           ],
         ),
       ),
@@ -38,11 +38,11 @@ class _PerguntaAppState extends State<PerguntaApp> {
   }
 }
 
-class PerguntaApp extends StatefulWidget {
-  const PerguntaApp({Key? key}) : super(key: key);
+class QuizApp extends StatefulWidget {
+  const QuizApp({Key? key}) : super(key: key);
 
   @override
-  _PerguntaAppState createState() {
-    return _PerguntaAppState();
+  _QuizAppState createState() {
+    return _QuizAppState();
   }
 }
