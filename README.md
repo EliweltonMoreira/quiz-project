@@ -1,4 +1,4 @@
-# projeto_perguntas
+# quiz-project
 
 A new Flutter project.
 
